@@ -1,5 +1,8 @@
 # 📄 Retrieval-Augmented Generation (RAG) Chatbot
 
+![GitHub stars](https://img.shields.io/github/stars/priyanka13ds/RAG-Chatbot?style=social)
+![Python](https://img.shields.io/badge/python-3.11-blue)
+
 A production-style Retrieval-Augmented Generation (RAG) chatbot for document-grounded question answering.  
 This project demonstrates an end-to-end GenAI pipeline using local embeddings, vector search, and a locally hosted large language model to enable efficient, privacy-preserving inference on custom documents.
 
