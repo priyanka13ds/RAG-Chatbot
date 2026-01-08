@@ -1,51 +1,64 @@
+# 📄 Retrieval-Augmented Generation (RAG) Chatbot
 
-# 📄 RAG Chatbot (Fully Local)
-
-A **fully local Retrieval-Augmented Generation (RAG) chatbot** that answers questions based on custom documents using **local embeddings, FAISS vector search, and a local LLM** — no external APIs, no cloud dependency.
+A production-style Retrieval-Augmented Generation (RAG) chatbot for document-grounded question answering.  
+This project demonstrates an end-to-end GenAI pipeline using local embeddings, vector search, and a locally hosted large language model to enable efficient, privacy-preserving inference on custom documents.
 
 ---
 
-## 🚀 Features
+## ⚡ Quick Start (TL;DR)
 
-* 📑 PDF document ingestion
-* ✂️ Text chunking for efficient retrieval
-* 🔢 **Local embeddings** using HuggingFace Sentence Transformers
-* 📦 Vector search with **FAISS**
-* 🤖 **Fully local LLM** using Ollama (Mistral)
-* 💬 Conversational memory
-* 🌐 Interactive UI with Streamlit
-* 🔒 Works **offline**, no API keys required
+```bash
+git clone https://github.com/priyanka13ds/RAG-Chatbot.git
+cd RAG-Chatbot
+python -m venv venv
+venv\Scripts\activate
+pip install -r requirements.txt
+python ingest.py
+ollama pull mistral
+streamlit run app.py
+```
+
+## Key Features
+
+* PDF-based knowledge ingestion
+* Semantic text chunking for improved retrieval
+* Local embeddings using HuggingFace Sentence Transformers
+* FAISS-based vector similarity search
+* Locally hosted LLM via Ollama (Mistral)
+* Multi-turn conversational memory
+* Interactive Streamlit-based UI
+* Fully offline and privacy-preserving inference
 
 ---
 
 ## 🧠 Architecture Overview
 
 ```
-PDF Documents
-     ↓
+User Document (PDF)
+        ↓
 Text Chunking
-     ↓
-Local Embeddings (Sentence-Transformers)
-     ↓
+        ↓
+Sentence Embeddings (Local)
+        ↓
 FAISS Vector Store
-     ↓
-Retriever
-     ↓
-Local LLM (Ollama - Mistral)
-     ↓
+        ↓
+Semantic Retriever
+        ↓
+Local LLM (Ollama – Mistral)
+        ↓
 Streamlit Chat Interface
 ```
 
 ---
 
-## 🛠️ Tech Stack
+## 🛠️ Technology Stack
 
-* **Python 3.11**
-* **LangChain**
-* **HuggingFace Sentence Transformers**
-* **FAISS**
-* **Ollama (Mistral LLM)**
-* **Streamlit**
+- **Language:** Python 3.11  
+- **Orchestration:** LangChain  
+- **Embeddings:** HuggingFace Sentence Transformers  
+- **Vector Store:** FAISS  
+- **LLM Runtime:** Ollama (Mistral)  
+- **Frontend:** Streamlit  
 
 ---
 
@@ -66,7 +79,7 @@ rag-chatbot/
 
 ---
 
-## ⚙️ Setup Instructions
+## ⚙️ Setup & Installation
 
 ### 1️⃣ Clone the Repository
 
@@ -77,7 +90,7 @@ cd rag-chatbot
 
 ---
 
-### 2️⃣ Create Virtual Environment
+### 2️⃣ Create and Activate Virtual Environment
 
 ```bash
 python -m venv venv
@@ -94,9 +107,9 @@ pip install -r requirements.txt
 
 ---
 
-### 4️⃣ Add Your Document
+### 4️⃣ Add Input Document
 
-Place your PDF inside the `data/` folder and rename it to:
+Place a PDF file inside the data/ directory and rename it to:
 
 ```
 sample.pdf
@@ -104,13 +117,15 @@ sample.pdf
 
 ---
 
-### 5️⃣ Create Vector Store (Local Embeddings)
+### 5️⃣ Build the Vector Store
+
+Generate embeddings and create the FAISS index:
 
 ```bash
 python ingest.py
 ```
 
-You should see:
+Expected output:
 
 ```
 ✅ Vector store created successfully!
@@ -118,7 +133,7 @@ You should see:
 
 ---
 
-### 6️⃣ Install Ollama (Local LLM)
+### 6️⃣ Install and Configure Local LLM (Ollama)
 
 Download and install Ollama:
 👉 [https://ollama.com/download](https://ollama.com/download)
@@ -137,26 +152,38 @@ ollama pull mistral
 streamlit run app.py
 ```
 
-Open the browser and start asking questions about your document.
+The application will open in your browser, allowing you to interactively query your document.
 
 ---
 
-## 💡 Example Questions
+## 💡 Sample Queries
+* What is the main topic of this document?
+* Summarize the key points.
+* Explain this concept in simple terms.
+* What conclusions are presented?
 
-* “What is this document about?”
-* “Summarize the key points”
-* “Explain this concept in simple terms”
-* “What are the conclusions?”
+---
+
+## 🎯 Why This Project Matters
+
+This project demonstrates hands-on experience with:
+
+- Retrieval-Augmented Generation (RAG) system design
+- Vector similarity search for semantic information retrieval
+- Integration of locally hosted large language models for cost-efficient inference
+- End-to-end GenAI application development, from data ingestion to user-facing interface
+
+It reflects real-world engineering considerations such as data privacy, reproducibility, and modular system design.
 
 ---
 
 ## 🔮 Future Enhancements
 
-* Source citation display
-* Multi-PDF support
-* Chat history UI
-* Dockerization
-* FastAPI backend
+- Source citation and document traceability  
+- Multi-document ingestion and indexing  
+- Enhanced chat history visualization  
+- Dockerized deployment  
+- FastAPI backend for scalable serving  
 
 ---
 
