@@ -5,6 +5,17 @@
 
 A production-style Retrieval-Augmented Generation (RAG) chatbot for document-grounded question answering.  
 This project demonstrates an end-to-end GenAI pipeline using local embeddings, vector search, and a locally hosted large language model to enable efficient, privacy-preserving inference on custom documents.
+---
+
+## 🎥 Demo
+
+**Quick Preview (GIF)**  
+![RAG Chatbot Demo]![Healthcare RAG Chatbot](https://github.com/user-attachments/assets/702ad015-af8a-4fad-9857-257958931825)
+
+**Full Walkthrough (6-minute video)**  
+▶️ Watch here: [https://youtu.be/IHh5VpIDXJw]
+
+> The demo showcases document ingestion, semantic retrieval, and interactive question answering using a locally hosted LLM.
 
 ---
 
